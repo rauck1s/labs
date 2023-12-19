@@ -11,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class ServiceProductTest {
 
     private ProductBatch batch;
-    private ProductBatch batch1;
     private static LengthStringFilter filter;
 
     @BeforeEach
@@ -44,9 +43,6 @@ class ServiceProductTest {
     }
     @Test
     void countByFilter() {
-        for(ProductInterface product: batch.getProduct()){
-            System.out.println(product.getName());
-        }
         assertEquals(2, ServiceProduct.countByFilter(batch,filter));
     }
 }

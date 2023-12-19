@@ -33,9 +33,6 @@ class ProductBatchTest {
         PieceProduct watermelon = new PieceProduct("watermelon", "default watermelon", 8);
         PackagingPieceProduct watermelonPacked = new PackagingPieceProduct(boxForMelonAndWatermelon, watermelon,4);
 
-        if(fruits.getProduct() != null){
-            System.out.println("фрукт ты");
-        }
         ProductInterface[] allBerriesAndFruits = new ProductInterface[]{watermelonPacked, melonPacked, fruits};
         batch = new ProductBatch(allBerriesAndFruits, "Berries and fruits");
         /*подсчеты:
