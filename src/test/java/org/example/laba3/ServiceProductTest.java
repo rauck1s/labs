@@ -27,7 +27,7 @@ class ServiceProductTest {
 
         ProductPackaging boxFruits = new ProductPackaging("Box fruits", 1);
         ProductInterface[] fruitsInterface = new ProductInterface[]{applePacked, bananasPacked, cherryPacked};
-        PackagingSetProduct fruits = new PackagingSetProduct(fruitsInterface, boxFruits);
+        PackagingSetProduct fruits = new PackagingSetProduct(fruitsInterface, boxFruits, "fruits");
 
         ProductPackaging boxForMelonAndWatermelon = new ProductPackaging("Packed melon and watermelon", 1);
         PieceProduct melon = new PieceProduct("melon", "default melon", 1.8);
@@ -37,7 +37,7 @@ class ServiceProductTest {
         PackagingPieceProduct watermelonPacked = new PackagingPieceProduct(boxForMelonAndWatermelon, watermelon,4);
 
         ProductInterface[] allBerriesAndFruits = new ProductInterface[]{watermelonPacked, melonPacked,
-                fruits.getProduct()[0],fruits.getProduct()[1], fruits.getProduct()[2]};
+                fruits};
 
         batch = new ProductBatch(allBerriesAndFruits, "Berries and fruits");
         filter = new LengthStringFilter();

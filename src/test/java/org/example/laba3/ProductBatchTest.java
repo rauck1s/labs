@@ -23,7 +23,7 @@ class ProductBatchTest {
 
         ProductPackaging boxFruits = new ProductPackaging("Box fruits", 1);
         ProductInterface[] fruitsInterface = new ProductInterface[]{applePacked, bananasPacked, cherryPacked};
-        PackagingSetProduct fruits = new PackagingSetProduct(fruitsInterface, boxFruits);
+        PackagingSetProduct fruits = new PackagingSetProduct(fruitsInterface, boxFruits, "fruits");
 
         ProductPackaging boxForMelonAndWatermelon = new ProductPackaging("Packed melon and watermelon", 1);
 

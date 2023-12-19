@@ -6,8 +6,18 @@ public class ServiceProduct {
     public static int countByFilter(ProductBatch batch, Filter filter) {
         int count = 0;
         for(ProductInterface item: batch.getProduct()){
-            if(filter.apply(item.getName())){
-                count++;
+            if(item instanceof Product ){
+                if(filter.apply(item.getName())){
+                    count ++;
+                }
+            }
+            if(item instanceof PackagingSetProduct){
+                ProductInterface[] array = ((PackagingSetProduct) item).getProduct();
+                for(int i =0; i < array.length; i ++){
+                    if(filter.apply(array[i].getName())){
+                        count++;
+                    }
+                }
             }
         }
         return count;

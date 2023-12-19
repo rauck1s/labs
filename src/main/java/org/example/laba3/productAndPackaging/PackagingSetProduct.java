@@ -6,12 +6,14 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class PackagingSetProduct implements ProductInterface {
+    private String name;
     private  ProductInterface[] product;
     private ProductPackaging packed;
-    public PackagingSetProduct(ProductInterface[] product, ProductPackaging packed) throws IllegalArgumentException {
+    public PackagingSetProduct(ProductInterface[] product, ProductPackaging packed, String name) throws IllegalArgumentException {
         if(product == null) {
             throw new IllegalArgumentException("Exceptions: NullPointerExceptions");
         }
+        this.name = name;
         this.packed = packed;
         this.product = product;
     }
@@ -32,9 +34,10 @@ public class PackagingSetProduct implements ProductInterface {
         this.packed = packed;
     }
 
+
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     public double getNetto(){
