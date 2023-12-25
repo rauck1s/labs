@@ -13,8 +13,8 @@ public class ServiceProduct {
             }
             if(item instanceof PackagingSetProduct){
                 ProductInterface[] array = ((PackagingSetProduct) item).getProduct();
-                for(int i =0; i < array.length; i ++){
-                    if(filter.apply(array[i].getName())){
+                for (ProductInterface productInterface : array) {
+                    if (filter.apply(productInterface.getName())) {
                         count++;
                     }
                 }
