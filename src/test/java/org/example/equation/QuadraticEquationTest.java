@@ -26,7 +26,7 @@ class QuadraticEquationTest {
         testEquationSecond = new StorageQuadraticEquation(-1,0,4);
         testEquationThird = new StorageQuadraticEquation(3,2,0);
         testEquationFourth = new StorageQuadraticEquation(2,2,2);
-        testEquationFirst = new StorageQuadraticEquation(0,0,0);
+        testEquationFifth = new StorageQuadraticEquation(0,0,0);
     }
     /*root:
     * 1: 0,5*/
