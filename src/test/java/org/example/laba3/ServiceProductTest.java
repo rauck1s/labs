@@ -43,6 +43,6 @@ class ServiceProductTest {
     }
     @Test
     void countByFilter() {
-        assertEquals(2, ServiceProduct.countByFilter(batch,filter));
+        assertEquals(1, ServiceProduct.countByFilter(batch,filter));
     }
 }

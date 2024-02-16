@@ -21,5 +21,9 @@ class SearchNumbersFilterTest {
     void applyFalse(){
         assertFalse(filter.apply("great life 1 3 5 "));
     }
+    @Test
+    void applyFalseSecond(){
+        assertFalse(filter.apply("ghjkl dfa"));
+    }
 }
 

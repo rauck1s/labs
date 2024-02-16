@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ProductBatchTest {
     private ProductBatch batch;
+    private ProductBatch test;
     @BeforeEach
      void setUp() throws IllegalAccessException {
         ProductPackaging packed = new ProductPackaging("Pack", 0.1);
