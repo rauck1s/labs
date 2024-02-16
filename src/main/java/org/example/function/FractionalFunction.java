@@ -19,7 +19,7 @@ public class FractionalFunction implements Function{
 
     @Override
     public double calc(double arg) {
-        if (arg <= rangeStart && arg >= rangeEnd) {
+        if (arg < rangeStart || arg > rangeEnd) {
             throw new IllegalArgumentException("Exception: arg is outside of range!");
         }
         return (a * arg + b) / (c * arg + d);

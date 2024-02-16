@@ -15,7 +15,7 @@ public class LinearFunction implements Function {
 
     @Override
     public double calc(double arg) throws IllegalArgumentException {
-        if (arg <= rangeStart && arg >= rangeEnd) {
+        if (arg < rangeStart || arg > rangeEnd) {
             throw new IllegalArgumentException("Exception: arg is outside of range!");
         }
         return a * arg + b;

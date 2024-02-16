@@ -37,7 +37,6 @@ public class IntegralFunctional<T extends Function> implements Functional<T> {
             arg = rangeStart + (i + 0.5) * h;
             sum += func.calc(arg);
         }
-
         return sum * h;
     }
 

@@ -1,5 +1,6 @@
 package org.example.equation;
 
+import org.example.StorageQuadraticEquation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -59,11 +60,23 @@ class QuadraticEquationTest {
     /*no roots */
     @Test
     void solutionFourth(){
-        assertThrows(IllegalArgumentException.class, ()->{testEquationFourth.roots();});
+        assertThrows(IllegalAccessException.class, ()->{testEquationFourth.roots();});
     }
     /*no roots*/
     @Test
     void solutionFifth(){
-        assertThrows(IllegalArgumentException.class, ()->{testEquationFifth.roots();});
+        assertThrows(IllegalAccessException.class, ()->{testEquationFifth.roots();});
+    }
+    @Test
+    void testMaxFirst() throws IllegalAccessException {
+        assertEquals(0., QuadraticEquation.getLargerRoot(testEquationThird));
+    }
+    @Test
+    void testMaxSecond() throws IllegalAccessException {
+        assertEquals(2., QuadraticEquation.getLargerRoot(testEquationSecond));
+    }
+    @Test
+    void testMaxThird() throws IllegalAccessException {
+        assertEquals(0.5, QuadraticEquation.getLargerRoot(testEquationFirst));
     }
 }
