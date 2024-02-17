@@ -62,4 +62,13 @@ public class Human {
         return Objects.hash(secondName, firstName, surname, age);
     }
 
+    @Override
+    public String toString() {
+        return "Human{" +
+                "secondName='" + secondName + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                '}';
+    }
 }

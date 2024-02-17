@@ -3,15 +3,16 @@ package org.example.lab6;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Human first = new Human("dimas", "dims", "dmitrisg", 111);
-        Human second = new Human("disfd", "dimsdf", "dmitrinksg", 110);
-        Human third = new Human("dimas", "dimsaf", "dmitrinbk", 103);
-        Human fort = new Human("dimasgfg", "dimsasd", "dmitriaf", 10);
-        Human res = new Human("dimas", "dims", "dmitri", 10);
+        Human first = new Human("dimas", "dims", "dmit", 10);
+        Human second = new Human("disfd", "di", "dmit", 110);
+        Human third = new Human("dimas", "dims", "dmitrinbk", 103);
+        Human fort = new Human("dimasgfg", "di", "dmitriaf", 10);
+        Human res = new Human("dimas", "dims", "dmit", 10);
         List<Human> testList = new ArrayList<>();
         testList.add(first);
         testList.add(second);
@@ -23,8 +24,14 @@ public class Main {
         testListStr.add("nbska");
         testListStr.add("1wer");
         testListStr.add("qwer");
-        if (2 ==CollectionsDemo.sortByFirstSymbol(testListStr, 'q')){
-            System.out.println("true");
-        }
+        List<Integer[]> testInt = new ArrayList<>();
+        Integer[] firsT = new Integer[]{1,1,3,4,4};
+        Integer[] seco = new Integer[]{1,1,3,4,5};
+        Integer[] thir = new Integer[]{1,1,3,4,1};
+        Integer[] testtinggg = new Integer[]{1,1,3,4,5};
+        testInt.add(firsT);
+        testInt.add(seco);
+        testInt.add(thir);
+        List<Integer[]> result = new ArrayList<>(CollectionsDemo.deletingSetsIntegerNumbers(testInt, testtinggg));
     }
 }
