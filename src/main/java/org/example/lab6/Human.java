@@ -61,5 +61,5 @@ public class Human {
     public int hashCode() {
         return Objects.hash(secondName, firstName, surname, age);
     }
-    public
+
 }
