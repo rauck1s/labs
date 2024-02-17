@@ -1,3 +1,5 @@
+package org.example.lab1;
+
 public class Vector3DProcessor {
     public Vector3D sum(Vector3D vector1, Vector3D vector2) {
         double x = vector1.getX() + vector2.getX();

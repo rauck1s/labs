@@ -1,3 +1,5 @@
+package org.example.lab1;
+
 public class Array {
 
     public void printArr(int [] arr) {

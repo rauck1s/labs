@@ -1,3 +1,5 @@
+package org.example.lab1;
+
 public class Vector3D {
     private double x;
     private double y;

@@ -1,3 +1,5 @@
+package org.example.lab1;
+
 import java.util.Objects;
 
 public class Point3D {
