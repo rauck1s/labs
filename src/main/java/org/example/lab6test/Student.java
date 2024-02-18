@@ -1,4 +1,4 @@
-package org.example.lab6;
+package org.example.lab6test;
 
 public class Student extends Human{
     private String faculty;

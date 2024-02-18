@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="laba4" target="20" />
+      <module name="secondLabs" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>

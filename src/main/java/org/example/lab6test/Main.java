@@ -1,9 +1,6 @@
-package org.example.lab6;
-
-import org.w3c.dom.ls.LSOutput;
+package org.example.lab6test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Main {
@@ -32,6 +29,5 @@ public class Main {
         testInt.add(firsT);
         testInt.add(seco);
         testInt.add(thir);
-        List<Integer[]> result = new ArrayList<>(CollectionsDemo.deletingSetsIntegerNumbers(testInt, testtinggg));
     }
 }

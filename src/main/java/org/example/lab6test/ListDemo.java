@@ -1,4 +1,4 @@
-package org.example.lab6;
+package org.example.lab6test;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ public class ListDemo {
     static List<Human> EqualsSecondName(List<Human> list, Human human){
         List<Human> resultList = new ArrayList<>();
         for(Human people: list){
-            if(!people.getSecondName().equals(human.getSecondName())){
+            if(people.getSecondName().equals(human.getSecondName())){
                 resultList.add(people);
             }
         }

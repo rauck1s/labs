@@ -1,4 +1,4 @@
-package org.example.lab6;
+package org.example.lab6test;
 
 import java.util.Objects;
 
