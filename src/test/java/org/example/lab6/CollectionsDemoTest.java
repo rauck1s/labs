@@ -1,4 +1,4 @@
-package org.example.lab6test;
+package org.example.lab6;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

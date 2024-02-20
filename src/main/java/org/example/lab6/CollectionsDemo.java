@@ -1,12 +1,13 @@
-package org.example.lab6test;
+package org.example.lab6;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 
 public class CollectionsDemo {
 
-    /*in line 11 can be replaced: str.startsWith(symbol)*/
+    /*can be replaced "if": str.startsWith(symbol)*/
     static int sortByFirstSymbol(List<String> strings, char symbol){
         int result = 0;
         for(String str: strings){
@@ -27,11 +28,11 @@ public class CollectionsDemo {
         }
         return resultList;
     }
-    static List<Integer[]> deletingSetsIntegerNumbers(List<Integer[]> setsIntNumber, Integer[] arrayNumber){
-        List<Integer[]> resultSets = new ArrayList<>(setsIntNumber);
+    static List<Set<Integer>> deletingSetsIntegerNumbers(List<Set<Integer>> setsIntNumber, Set <Integer> arrayNumber){
+        List<Set<Integer>> resultSets = new ArrayList<>(setsIntNumber);
         for (int i = 0; i < resultSets.size(); i++) {
-            Integer[] array = resultSets.get(i);
-            if (Arrays.equals(array, arrayNumber)) {
+            Set<Integer> array = resultSets.get(i);
+            if (array.equals(arrayNumber)) {
                 resultSets.remove(array);
             }
         }

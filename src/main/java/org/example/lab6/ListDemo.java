@@ -1,7 +1,8 @@
-package org.example.lab6test;
+package org.example.lab6;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class ListDemo {
     static List<Human> EqualsSecondName(List<Human> list, Human human){
@@ -13,4 +14,8 @@ public class ListDemo {
         }
         return resultList;
     }
+    //FIXME: задание 5, сразу с тестом написать
+    /*static List<Set<Human>> maxAge(List<Human> inputList){
+    }*/
+
 }

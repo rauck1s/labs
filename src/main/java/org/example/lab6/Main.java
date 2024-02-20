@@ -1,4 +1,4 @@
-package org.example.lab6test;
+package org.example.lab6;
 
 import java.util.ArrayList;
 import java.util.List;
