@@ -1,4 +1,4 @@
-package org.example.lab6;
+package org.example.lab6.classes;
 
 import java.util.Objects;
 
@@ -8,6 +8,12 @@ public class Human {
     private String surname;
     private int age;
 
+    public Human(){
+        this.firstName = "Дима";
+        this.secondName = "Димасович";
+        this.surname = "Дмитриевич";
+        this.age = 18;
+    }
     public Human(String secondName, String firstName, String surname, int age) {
         this.secondName = secondName;
         this.firstName = firstName;

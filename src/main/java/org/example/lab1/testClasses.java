@@ -2,11 +2,10 @@ package org.example.lab1;
 
 import java.io.IOException;
 import java.util.Scanner;
-import java.util.Vector;
 
 import static java.lang.Math.sqrt;
 
-public class Main {
+public class testClasses {
 
     public static void main(String[] args) throws IOException {
         Scanner in = new Scanner(System.in);

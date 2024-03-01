@@ -1,4 +1,6 @@
-package org.example.lab5;
+package org.example.lab5.matrix;
+
+import org.example.lab5.matrixInterface.IMatrix;
 
 import java.util.Arrays;
 
@@ -10,7 +12,7 @@ public class Matrix implements IMatrix {
     public Matrix(int size) {
         this.size = size;
         this.matrix = new double[this.size * this.size];
-        setFlag(false);
+        flag = false;
     }
 
     @Override
@@ -21,18 +23,20 @@ public class Matrix implements IMatrix {
     @Override
     public void removeElementFromIndex(int i, int j, double element) throws Exception {
         matrix[i * size + j] = element;
-        setFlag(false);
+        flag = false;
     }
 
     @Override
     public double determinateMatrix() {
-        if(getFlag()) {
+        if(flag) {
             return determinate;
         }
         determinate = 1;
         double[][] helpMatrix = new double[size][size];
         for (int i = 0; i < size; i++) {
-            System.arraycopy(matrix, i * size, helpMatrix[i], 0, size);
+            for(int j =0; j < size; j ++){
+                helpMatrix[i][j] =matrix[i * size + j];
+            }
         }
         for (int i = 0; i < size; i++) {
             int maxRow = i;
@@ -48,25 +52,16 @@ public class Matrix implements IMatrix {
                 determinate = -determinate;
             }
             for (int j = i + 1; j < size; j++) {
-                double coff = helpMatrix[j][i] /helpMatrix[i][i];
+                double coff = helpMatrix[j][i] / helpMatrix[i][i];
                 for (int k = i; k < size; k++) {
                     helpMatrix[j][k] -= coff * helpMatrix[i][k];
                 }
             }
             determinate *= helpMatrix[i][i];
         }
-        setFlag(true);
+        flag = true;
         return determinate;
     }
-
-    public boolean getFlag() {
-        return flag;
-    }
-
-    private void setFlag(boolean flag) {
-        this.flag = flag;
-    }
-
     public double getDeterminate() throws Exception {
         if(flag){
             return determinate;

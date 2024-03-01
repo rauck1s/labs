@@ -1,6 +1,8 @@
-package org.example.lab5;
+package org.example.lab5.matrix;
 
-public class UpTriangleMatrix extends Matrix implements IMatrix{
+import org.example.lab5.matrixInterface.IMatrix;
+
+public class UpTriangleMatrix extends Matrix implements IMatrix {
     public UpTriangleMatrix(int size) {
         super(size);
     }

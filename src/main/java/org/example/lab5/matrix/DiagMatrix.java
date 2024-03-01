@@ -1,4 +1,6 @@
-package org.example.lab5;
+package org.example.lab5.matrix;
+
+import org.example.lab5.matrixInterface.IMatrix;
 
 public class DiagMatrix extends Matrix implements IMatrix {
     public DiagMatrix(int size) {
@@ -9,11 +11,10 @@ public class DiagMatrix extends Matrix implements IMatrix {
         super(size);
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
-                this.removeElementFromIndex(i, j, item[i]);
+                removeElementFromIndex(i, j, item[i]);
             }
         }
     }
-
     @Override
     public void setMatrix(double[] matrix) throws Exception {
         for (int i = 0; i < super.getSize(); i++) {

@@ -1,6 +1,8 @@
-package org.example.lab6;
+package org.example.lab6.classes;
 
-public class Student extends Human{
+import org.example.lab6.classes.Human;
+
+public class Student extends Human {
     private String faculty;
     public Student(String secondName, String firstName, String surname, int age, String faculty) {
         super(secondName, firstName, surname, age);

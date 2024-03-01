@@ -1,6 +1,6 @@
 package org.example.lab5;
 
-import org.example.lab5.UpTriangleMatrix;
+import org.example.lab5.matrix.UpTriangleMatrix;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
