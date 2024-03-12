@@ -15,17 +15,20 @@ class CollectionsDemoTest {
     /*First Task*/
     @Test
     void sortByFirstSymbol() {
+
         String firstLine = "qwert";
         String secondLine = "werq";
         String thirdLine = "eqwer";
         String fourthLine = "qqwert";
         String fifthLine = "01";
+
         List<String> forSortByFirstSymbol =new ArrayList<>();
         forSortByFirstSymbol.add(firstLine);
         forSortByFirstSymbol.add(secondLine);
         forSortByFirstSymbol.add(thirdLine);
         forSortByFirstSymbol.add(fourthLine);
         forSortByFirstSymbol.add(fifthLine);
+
         assertEquals(2, CollectionsDemo.sortByFirstSymbol(forSortByFirstSymbol, 'q'));
         assertEquals(1, CollectionsDemo.sortByFirstSymbol(forSortByFirstSymbol, 'e'));
         assertEquals(1, CollectionsDemo.sortByFirstSymbol(forSortByFirstSymbol, '0'));
@@ -157,6 +160,46 @@ class CollectionsDemoTest {
         inputMap.put(4, new Human("ritka", "milk", "narov", 23));
         inputMap.put(5, new Human("adf", "milk", "narov", 11));
 
+        Map<Integer, Integer> outputMap = new HashMap<>();
+        outputMap.put(1, 34);
+        outputMap.put(2, 11);
+        outputMap.put(3, 23);
+        outputMap.put(4, 23);
+        outputMap.put(5, 11);
+
+        assertEquals(outputMap, CollectionsDemo.buildAgeMap(inputMap));
+    }
+
+    /*tenth task*/
+    @Test
+    void buildAgeToHumansMap(){
+
+        Set<Human> inputSet  = new HashSet<>();
+        inputSet.add(new Human("rika", "milk", "void", 34));
+        inputSet.add(new Human("ri", "servich", "longling", 11));
+        inputSet.add(new Human("ritka", "milk", "narov", 23));
+        inputSet.add(new Human("ritka", "milk", "narov", 23));
+        inputSet.add(new Human("adf", "milk", "narov", 11));
+
+        Map<Integer, List<Human>> outputMap = new HashMap<>();
+
+        List<Human> listFirstHumans = new ArrayList<>();
+        listFirstHumans.add(new Human("rika", "milk", "void", 34));
+
+        List<Human> listSecondHumans = new ArrayList<>();
+        listSecondHumans.add(new Human("adf", "milk", "narov", 11));
+        listSecondHumans.add(new Human("ri", "servich", "longling", 11));
+
+
+        List<Human> listThirdHumans = new ArrayList<>();
+        listThirdHumans.add(new Human("ritka", "milk", "narov", 23));
+
+
+        outputMap.put(34, listFirstHumans);
+        outputMap.put(11,listSecondHumans);
+        outputMap.put(23, listThirdHumans);
+
+        assertEquals(outputMap,CollectionsDemo.buildAgeToHumansMap(inputSet));
     }
 
 }
