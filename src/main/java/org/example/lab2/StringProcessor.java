@@ -23,7 +23,7 @@ public class StringProcessor {
             throw new IllegalArgumentException("Exception: First line is null!");
         }
         else {
-            return lineOne.split(lineTwo, -1).length - 1;
+            return lineOne.split(lineTwo, -1).length - 1;//разбивает строку по нашей строке, -1 аргумент чтоб получить все подстроки как в конце так и в начале
         }
     }
 

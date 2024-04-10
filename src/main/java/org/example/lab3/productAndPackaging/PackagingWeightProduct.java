@@ -1,4 +1,5 @@
 package org.example.lab3.productAndPackaging;
+
 import org.example.lab3.helperClass.ProductPackaging;
 
 import java.util.Objects;
@@ -6,12 +7,13 @@ import java.util.Objects;
 public class PackagingWeightProduct extends WeightProduct implements ProductInterface {
     private ProductPackaging packaging;
     private double weight;
+
     public PackagingWeightProduct(ProductPackaging packaging, Product product, double weight) throws IllegalAccessException {
         super(product.getNameProduct(), product.getDescriptions());
-        if(weight <= 0){
+        if (weight <= 0) {
             throw new IllegalAccessException("Exception: incorrect weight package");
         }
-        if(packaging.getPackagingName().isBlank()){
+        if (packaging.getPackagingName().isBlank()) {
             throw new IllegalAccessException("Exception: incorrect name package");
         }
         this.packaging = new ProductPackaging(packaging.getPackagingName(), packaging.getPackagingWeight());
@@ -43,6 +45,7 @@ public class PackagingWeightProduct extends WeightProduct implements ProductInte
     public double getNetto() {
         return weight;
     }
+
     @Override
     public double getBrutto() {
         return weight + packaging.getPackagingWeight();

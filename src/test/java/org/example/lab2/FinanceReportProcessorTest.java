@@ -36,9 +36,13 @@ class FinanceReportProcessorTest {
     @Test
     void FinanceReport(){
         FinanceReport newCopyReportTest = new FinanceReport(testReport);
+
         Assertions.assertEquals(newCopyReportTest.equals(testReport), testReport.equals(newCopyReportTest));
         newCopyReportTest.setPayment(newCopyReportTest.getPaymentByIndex(0), 3);
+
         Assertions.assertNotEquals(testReport, newCopyReportTest);
+
+
         System.out.println(testReport.toString());
         System.out.println(newCopyReportTest);
     }

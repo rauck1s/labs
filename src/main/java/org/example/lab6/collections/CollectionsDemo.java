@@ -6,18 +6,12 @@ import java.util.*;
 
 public class CollectionsDemo {
 
-    /* First task:
-     *can be replaced "if": str.startsWith(symbol)*/
+    /* First task:*/
     public static int sortByFirstSymbol(List<String> strings, char symbol){
 
         int result = 0;
 
         for(String str: strings){
-
-            if(str.isEmpty()){
-                throw new IllegalArgumentException("String is empty");
-            }
-
             if (symbol == str.charAt(0)) {
                 result++;
             }
@@ -26,8 +20,7 @@ public class CollectionsDemo {
         return result;
     }
 
-    /*Third task:
-     * can be replaced "for": resultList.removeIF(people -> people.equals(human));*/
+    /*Third task:*/
      public static List<Human> deleteHumanInList(List<Human> listHuman, Human human){
 
         List<Human> resultList = new ArrayList<>(listHuman);
@@ -45,16 +38,14 @@ public class CollectionsDemo {
     /*Fourth task:*/
     public static List<Set<Integer>> deletingSetsIntegerNumbers(List<Set<Integer>> setsIntNumber, Set <Integer> arrayNumber){
 
-        List<Set<Integer>> resultSets = new ArrayList<>(setsIntNumber);
+        List<Set<Integer>> result = new ArrayList<>();
 
-        for (int i = 0; i < resultSets.size(); i++) {
-            Set<Integer> array = resultSets.get(i);
-            if (array.equals(arrayNumber)) {
-                resultSets.remove(array);
+        for(Set<Integer> set: setsIntNumber){
+            if(Collections.disjoint(set, arrayNumber)){
+                result.add(set);
             }
         }
-
-        return resultSets;
+        return result;
     }
 
     /*Seventh task: */
@@ -72,11 +63,11 @@ public class CollectionsDemo {
     }
 
     /*Eight task:*/
-    public static Set<Human> sortAdultsHuman (Map<Integer,Human> map, Set<Integer> set){
+    public static List<Human> sortAdultsHuman (Map<Integer,Human> map){
 
-        Set<Human> result= new HashSet<>();
+        List<Human> result= new ArrayList<>();
 
-        for(int id: set){
+        for(int id: map.keySet()){
             if(map.get(id).getAge()>=18){
                 result.add(map.get(id));
             }

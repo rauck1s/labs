@@ -70,9 +70,9 @@ class CollectionsDemoTest {
     void deletingSetsIntegerNumbers() {
 
         Set<Integer> setInput = new HashSet<>();
+        setInput.add(5);
+        setInput.add(201);
         setInput.add(10);
-        setInput.add(20);
-        setInput.add(30);
 
         List<Set<Integer>> listInput = new ArrayList<>();
 
@@ -96,9 +96,8 @@ class CollectionsDemoTest {
         listInput.add(thirdSet);
 
         List<Set<Integer>> output = new ArrayList<>();
-        output.add(firstSet);
-        output.add(secondSet);
 
+        output.add(secondSet);
         assertEquals(output, CollectionsDemo.deletingSetsIntegerNumbers(listInput, setInput));
 
     }
@@ -137,16 +136,12 @@ class CollectionsDemoTest {
         inputMap.put(4, new Human("ritka", "milk", "narov", 23));
         inputMap.put(5, new Human("adf", "milk", "narov", 11));
 
-        Set<Integer> inputSet = new HashSet<>();
-        inputSet.add(1);
-        inputSet.add(3);
-        inputSet.add(5);
-
-        Set<Human> outputSet = new HashSet<>();
+        List<Human> outputSet = new ArrayList<>();
         outputSet.add( new Human("rika", "milk", "void", 34));
         outputSet.add( new Human("ritka", "milk", "narov", 23));
+        outputSet.add(new Human("ritka", "milk", "narov", 23));
 
-        assertEquals(outputSet,CollectionsDemo.sortAdultsHuman(inputMap,inputSet));
+        assertEquals(outputSet,CollectionsDemo.sortAdultsHuman(inputMap));
     }
 
     /*Ninth task*/
@@ -178,7 +173,7 @@ class CollectionsDemoTest {
         inputSet.add(new Human("rika", "milk", "void", 34));
         inputSet.add(new Human("ri", "servich", "longling", 11));
         inputSet.add(new Human("ritka", "milk", "narov", 23));
-        inputSet.add(new Human("ritka", "milk", "narov", 23));
+        inputSet.add(new Human("ritkaff", "milk", "narov", 23));
         inputSet.add(new Human("adf", "milk", "narov", 11));
 
         Map<Integer, List<Human>> outputMap = new HashMap<>();
@@ -193,6 +188,7 @@ class CollectionsDemoTest {
 
         List<Human> listThirdHumans = new ArrayList<>();
         listThirdHumans.add(new Human("ritka", "milk", "narov", 23));
+        listThirdHumans.add(new Human("ritkaff", "milk", "narov", 23));
 
 
         outputMap.put(34, listFirstHumans);

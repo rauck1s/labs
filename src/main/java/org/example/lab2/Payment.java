@@ -57,6 +57,7 @@ public class Payment {
         this.sumPayment = sumPayment;
     }
 
+
     @Override
     public String toString() {
         return "Payment{" +
@@ -67,6 +68,7 @@ public class Payment {
                 ", sumPayment=" + sumPayment +
                 '}';
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -79,5 +81,4 @@ public class Payment {
     public int hashCode() {
         return Objects.hash(nameHuman, dayDate, monthDate, yearDate, sumPayment);
     }
-
 }

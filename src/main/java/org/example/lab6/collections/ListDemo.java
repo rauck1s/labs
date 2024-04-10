@@ -35,6 +35,8 @@ public class ListDemo {
             if(human.getAge() > maxAge){
                 result.clear();
                 maxAge = human.getAge();
+                result.add(human);
+                continue;
             }
 
             if(human.getAge() == maxAge){

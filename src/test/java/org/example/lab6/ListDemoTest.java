@@ -25,6 +25,7 @@ class ListDemoTest {
         Human third = new Human("ritka", "milk", "narov", 23);
         Human fourth = new Human("ritka", "milk", "narov", 23);
         Human fifth = new Human("adf", "milk", "narov", 23);
+
         Human searchHuman =  new Human("ritka", "milk", "narov", 23);
 
         List<Human> nameList = new ArrayList<>();
@@ -35,6 +36,7 @@ class ListDemoTest {
         nameList.add(third);
         nameList.add(fourth);
         nameList.add(fifth);
+
         checkResult.add(third);
         checkResult.add(fourth);
 
