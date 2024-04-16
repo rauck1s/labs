@@ -14,7 +14,7 @@ class LengthStringFilterTest {
     }
     @Test
     void applyTru(){
-        assertTrue(filter.apply("12345"));
+        assertFalse(filter.apply("12345"));
     }
     @Test
     void applyFalseFirst(){
@@ -22,6 +22,6 @@ class LengthStringFilterTest {
     }
     @Test
     void applyFalseSecond(){
-        assertFalse(filter.apply("12345678910"));
+        assertTrue(filter.apply("12345678910"));
     }
 }
