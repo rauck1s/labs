@@ -1,9 +1,11 @@
 package org.example.lab7;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Flat {
+public class Flat implements Serializable {
     private int number;
     private int square;
     private List<Person> personInfo;
@@ -12,6 +14,11 @@ public class Flat {
         this.number = number;
         this.square = square;
         this.personInfo = personInfo;
+    }
+    public Flat(){
+        this.number = 0;
+        this.square = 0;
+        this.personInfo = new ArrayList<>();
     }
 
     public int getNumber() {

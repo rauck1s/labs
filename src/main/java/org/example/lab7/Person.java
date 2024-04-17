@@ -1,8 +1,9 @@
 package org.example.lab7;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Person {
+public class Person implements Serializable {
     private String name;
     private String surname;
     private String lastname;
@@ -13,6 +14,12 @@ public class Person {
         this.surname = surname;
         this.lastname = lastname;
         this.dataOfBirth = dataOfBirth;
+    }
+    public Person(){
+        this.name = "default";
+        this.surname = "default";
+        this.lastname = "default";
+        this.dataOfBirth = 111100;
     }
 
     public String getName() {

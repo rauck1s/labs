@@ -1,9 +1,11 @@
 package org.example.lab7;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class House {
+public class House implements Serializable {
     private String cadastralNum;
     private String address;
     private Person elder;
@@ -15,6 +17,12 @@ public class House {
         this.elder = elder;
         this.flatList = flatList;
     }
+    public House(){
+        this.cadastralNum = "default";
+        this.address = "default";
+        this.elder = new Person("default","default","default",111204 );
+        this.flatList = new ArrayList<>();
+    };
 
     public String getCadastralNum() {
         return cadastralNum;
