@@ -2,13 +2,13 @@ package org.example.lab7;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class inputAndOutput {
+public class Stream {
 
     /*First task*/
-    public static int[] firstBinaryStreamExample(int[] array, String fileName){
-
+    public static void inputStream(int[] array, String fileName) {
 
         try (DataOutputStream outputStream = new DataOutputStream(new FileOutputStream(fileName))) {
             for (int num : array) {
@@ -17,8 +17,11 @@ public class inputAndOutput {
         } catch (IOException e) {
             System.out.println("Ошибка при записи: " + e.getMessage());
         }
+    }
 
-        int[] resultArray = new int[array.length];
+    public static int[] outputStream(String fileName) {
+
+        int[] resultArray = new int[6];
 
         try (DataInputStream inputStream = new DataInputStream(new FileInputStream(fileName))) {
             for (int i = 0; i < resultArray.length; i++) {
@@ -30,9 +33,10 @@ public class inputAndOutput {
         return resultArray;
     }
 
-    /*Second Task*/
-    public static int[] secondBinaryStreamExample(int[] array, String fileName){
 
+
+    /*Second Task*/
+    public static void inputStreamWithSpaces(int[] array, String fileName) {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
             for (int num : array) {
@@ -42,6 +46,9 @@ public class inputAndOutput {
         } catch (IOException e) {
             System.out.println("Ошибка при записи: " + e.getMessage());
         }
+    }
+
+    public static int[] outputStreamWithSpaces(String fileName) {
         int[] resultArray = new int[]{};
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String line = reader.readLine();
@@ -50,40 +57,29 @@ public class inputAndOutput {
 
                 String[] numbers = line.trim().split("\\s+");
                 resultArray = new int[numbers.length];
-
                 for (int i = 0; i < numbers.length; i++) {
                     resultArray[i] = Integer.parseInt(numbers[i]);
                 }
-
             }
         } catch (IOException e) {
             System.out.println("Ошибка при чтении: " + e.getMessage());
         }
-
         return resultArray;
     }
 
     /*third task*/
-    public static int[] thirdBinaryStreamExample(int position, String fileName){
-        int[] resultArray = new int[]{};
-        try {
-            RandomAccessFile file = new RandomAccessFile(fileName, "r");
-            file.seek(position * 4);
-            int nums = (int) (file.length() / 4) - position;
+    public static int[] outputStreamWithPosition(int position, String fileName, int size) throws IOException {
 
-            resultArray = new int[nums];
-            for (int i = 0; i < nums; i++) {
-                resultArray[i] = file.readInt();
+        int[] array = new int[size];
+        try (RandomAccessFile randomAccessFile = new RandomAccessFile(fileName, "r")) {
+            randomAccessFile.seek(position * 4);
+            for (int i = 0; i < size; i++) {
+                array[i] = randomAccessFile.readInt();
             }
-            file.close();
-        } catch (IOException e) {
-            System.out.println("Ошибка при чтении: " + e.getMessage());
         }
-
-
-
-        return resultArray;
+        return array;
     }
+
     public static List<String> getFiles(String directoryPath, String extension) {
         List<String> fileList = new ArrayList<>();
 

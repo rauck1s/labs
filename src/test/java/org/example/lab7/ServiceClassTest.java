@@ -39,8 +39,6 @@ class ServiceClassTest {
         listFlat.add(flat77);
 
         House housefirst = new House("23:553:341:11", "Mira 55a", new Person("buk", "buki", "gibe", 111100),listFlat);
-        House housesecond = new House("23:553:341:11", "Mira 55a", new Person("buk", "buki", "gibe", 111100),listFlat);
-
 
         ServiceClass.serializeHouse(housefirst, "house.ser");
 
